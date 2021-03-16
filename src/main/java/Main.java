@@ -38,6 +38,7 @@ public class Main {
             System.out.println(json);
             Catalog catalog1 = (Catalog)parser.convertJSONtoXML(json, Catalog.class);
             System.out.println(catalog1);
+
             // Достаем подкатегории StAX`ом
             XMLInputFactory xif = XMLInputFactory.newFactory();
             StreamSource xml = new StreamSource(xmlFile);
@@ -46,7 +47,7 @@ public class Main {
             while(!xsr.getLocalName().equals(tagName)) {
                 xsr.nextTag();
             }
-
+            // Выводим в консоль
             JAXBContext jc = JAXBContext.newInstance(Category.class);
             Unmarshaller unmarshaller = jc.createUnmarshaller();
             JAXBElement<Category> jb = unmarshaller.unmarshal(xsr, Category.class);

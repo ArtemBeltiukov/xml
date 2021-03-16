@@ -13,50 +13,21 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="model">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="AB400"/>
-            <xs:enumeration value="AB290"/>
-            <xs:enumeration value="LI130"/>
-          </xs:restriction>
-        </xs:simpleType>
+
       </xs:element>
       <xs:element type="xs:string" name="production_date"/>
       <xs:element type="xs:string" name="color"/>
       <xs:element name="price">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="50.0"/>
-            <xs:enumeration value="46.0"/>
-            <xs:enumeration value="1.5"/>
-          </xs:restriction>
-        </xs:simpleType>
+
       </xs:element>
       <xs:element name="stockBalance">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="570"/>
-            <xs:enumeration value="568"/>
-            <xs:enumeration value="1000"/>
-          </xs:restriction>
-        </xs:simpleType>
+
       </xs:element>
       <xs:element name="name">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="Washing machine"/>
-            <xs:enumeration value="Bulb"/>
-          </xs:restriction>
-        </xs:simpleType>
+
       </xs:element>
       <xs:element name="id">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="2"/>
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="3"/>
-          </xs:restriction>
-        </xs:simpleType>
+
       </xs:element>
     </xs:sequence>
   </xs:complexType>

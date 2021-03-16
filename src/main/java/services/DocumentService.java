@@ -9,7 +9,6 @@ import java.io.IOException;
 public class DocumentService {
     public File createDocument(String fileName, Object catalog, Schema schema) throws SAXException, IOException, JAXBException {
         XmlParser parser = new XmlParser();
-        parser.convertObjectToXml(catalog, fileName, schema);
-        return new File(fileName);
+        return parser.convertObjectToXml(catalog, fileName, schema);
     }
 }

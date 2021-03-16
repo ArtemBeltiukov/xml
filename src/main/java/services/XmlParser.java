@@ -14,12 +14,14 @@ import java.io.IOException;
 
 public class XmlParser {
 
-    public void convertObjectToXml(Object catalog, String filePath, Schema schema) throws JAXBException, SAXException {
+    public File convertObjectToXml(Object catalog, String filePath, Schema schema) throws JAXBException {
+        File xmlFile = new File(filePath);
         JAXBContext context = JAXBContext.newInstance(Catalog.class);
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshaller.setSchema(schema);
-        marshaller.marshal(catalog, new File(filePath));
+        marshaller.marshal(catalog, xmlFile);
+        return xmlFile;
     }
 
     public Catalog fromXmlToObject(String filePath) throws IOException, SAXException, JAXBException {

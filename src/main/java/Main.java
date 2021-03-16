@@ -17,6 +17,8 @@ import java.util.List;
 
 public class Main {
     private static final String xmlPath = "catalog.xml";
+    // Имя тэга для остановки при обходе StAX
+    private static final String tagName = "category";
     public static void main(String[] args) {
         DocumentService documentService = new DocumentService();
         XmlParser parser = new XmlParser();
@@ -36,12 +38,12 @@ public class Main {
             System.out.println(json);
             Catalog catalog1 = (Catalog)parser.convertJSONtoXML(json, Catalog.class);
             System.out.println(catalog1);
-            // Достаем StAX подкатегории
+            // Достаем подкатегории StAX`ом
             XMLInputFactory xif = XMLInputFactory.newFactory();
             StreamSource xml = new StreamSource(xmlFile);
             XMLStreamReader xsr = xif.createXMLStreamReader(xml);
             xsr.nextTag();
-            while(!xsr.getLocalName().equals("category")) {
+            while(!xsr.getLocalName().equals(tagName)) {
                 xsr.nextTag();
             }
 
